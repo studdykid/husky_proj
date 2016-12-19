@@ -1,0 +1,97 @@
+\hypertarget{classRdKafka_1_1Handle}{\section{Rd\-Kafka\-:\-:Handle Class Reference}
+\label{classRdKafka_1_1Handle}\index{Rd\-Kafka\-::\-Handle@{Rd\-Kafka\-::\-Handle}}
+}
+
+
+{\ttfamily \#include $<$rdkafkacpp.\-h$>$}
+
+
+
+Inheritance diagram for Rd\-Kafka\-:\-:Handle\-:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std\-::string \hyperlink{classRdKafka_1_1Handle_abaa74be1b5b15784d47bc9c97edd0b9c}{name} () const =0
+\item 
+virtual const std\-::string \hyperlink{classRdKafka_1_1Handle_ae0395b131921c05554688202fc0160a4}{memberid} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the client's broker-\/assigned group member id. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{poll} (int timeout\-\_\-ms)=0
+\item 
+virtual int \hyperlink{classRdKafka_1_1Handle_a5ea17c83faa627056fca792be4ec6616}{outq\-\_\-len} ()=0
+\item 
+virtual Error\-Code \hyperlink{classRdKafka_1_1Handle_ac0cc63c574ce027a184640645151a75c}{metadata} (bool all\-\_\-topics, const \hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$only\-\_\-rkt, \hyperlink{classRdKafka_1_1Metadata}{Metadata} $\ast$$\ast$metadatap, int timeout\-\_\-ms)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base handle, super class for \hyperlink{classRdKafka_1_1Consumer}{Consumer} and \hyperlink{classRdKafka_1_1Producer}{Producer}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Handle_ae0395b131921c05554688202fc0160a4}{\index{Rd\-Kafka\-::\-Handle@{Rd\-Kafka\-::\-Handle}!memberid@{memberid}}
+\index{memberid@{memberid}!RdKafka::Handle@{Rd\-Kafka\-::\-Handle}}
+\subsubsection[{memberid}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\-::string Rd\-Kafka\-::\-Handle\-::memberid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Handle_ae0395b131921c05554688202fc0160a4}
+
+
+Returns the client's broker-\/assigned group member id. 
+
+\begin{DoxyRemark}{Remarks}
+This currently requires the high-\/level \hyperlink{classRdKafka_1_1KafkaConsumer}{Kafka\-Consumer}
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+Last assigned member id, or empty string if not currently a group member. 
+\end{DoxyReturn}
+\hypertarget{classRdKafka_1_1Handle_ac0cc63c574ce027a184640645151a75c}{\index{Rd\-Kafka\-::\-Handle@{Rd\-Kafka\-::\-Handle}!metadata@{metadata}}
+\index{metadata@{metadata}!RdKafka::Handle@{Rd\-Kafka\-::\-Handle}}
+\subsubsection[{metadata}]{\setlength{\rightskip}{0pt plus 5cm}virtual Error\-Code Rd\-Kafka\-::\-Handle\-::metadata (
+\begin{DoxyParamCaption}
+\item[{bool}]{all\-\_\-topics, }
+\item[{const {\bf Topic} $\ast$}]{only\-\_\-rkt, }
+\item[{{\bf Metadata} $\ast$$\ast$}]{metadatap, }
+\item[{int}]{timeout\-\_\-ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Handle_ac0cc63c574ce027a184640645151a75c}
+Request \hyperlink{classRdKafka_1_1Metadata}{Metadata} from broker. all\-\_\-topics -\/ if non-\/zero\-: request info about all topics in cluster, if zero\-: only request info about locally known topics. only\-\_\-rkt -\/ only request info about this topic metadatap -\/ pointer to hold metadata result. The '$\ast$metadatap' pointer must be released with delete. timeout\-\_\-ms -\/ maximum response time before failing.
+
+Returns R\-D\-\_\-\-K\-A\-F\-K\-A\-\_\-\-R\-E\-S\-P\-\_\-\-E\-R\-R\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R on success (in which case $\ast$metadatap) will be set, else R\-D\-\_\-\-K\-A\-F\-K\-A\-\_\-\-R\-E\-S\-P\-\_\-\-E\-R\-R\-\_\-\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T on timeout or other error code on error. \hypertarget{classRdKafka_1_1Handle_abaa74be1b5b15784d47bc9c97edd0b9c}{\index{Rd\-Kafka\-::\-Handle@{Rd\-Kafka\-::\-Handle}!name@{name}}
+\index{name@{name}!RdKafka::Handle@{Rd\-Kafka\-::\-Handle}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\-::string Rd\-Kafka\-::\-Handle\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Handle_abaa74be1b5b15784d47bc9c97edd0b9c}
+Returns the name of the handle \hypertarget{classRdKafka_1_1Handle_a5ea17c83faa627056fca792be4ec6616}{\index{Rd\-Kafka\-::\-Handle@{Rd\-Kafka\-::\-Handle}!outq\-\_\-len@{outq\-\_\-len}}
+\index{outq\-\_\-len@{outq\-\_\-len}!RdKafka::Handle@{Rd\-Kafka\-::\-Handle}}
+\subsubsection[{outq\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Rd\-Kafka\-::\-Handle\-::outq\-\_\-len (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Handle_a5ea17c83faa627056fca792be4ec6616}
+Returns the current out queue length\-: messages waiting to be sent to, or acknowledged by, the broker. \hypertarget{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}{\index{Rd\-Kafka\-::\-Handle@{Rd\-Kafka\-::\-Handle}!poll@{poll}}
+\index{poll@{poll}!RdKafka::Handle@{Rd\-Kafka\-::\-Handle}}
+\subsubsection[{poll}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Rd\-Kafka\-::\-Handle\-::poll (
+\begin{DoxyParamCaption}
+\item[{int}]{timeout\-\_\-ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Handle_a98d3b4ee48457ff13e4d5155e3fc5ea4}
+Polls the provided kafka handle for events.
+
+Events will cause application provided callbacks to be called.
+
+The 'timeout\-\_\-ms' argument specifies the minimum amount of time (in milliseconds) that the call will block waiting for events. For non-\/blocking calls, provide 0 as 'timeout\-\_\-ms'. To wait indefinately for an event, provide -\/1.
+
+Events\-:
+\begin{DoxyItemize}
+\item delivery report callbacks (if dr\-\_\-cb is configured) \mbox{[}producer\mbox{]}
+\item event callbacks (if event\-\_\-cb is configured) \mbox{[}producer \& consumer\mbox{]}
+\item stats callbacks (if stats\-\_\-cb is configured) \mbox{[}producer \& consumer\mbox{]}
+\end{DoxyItemize}
+
+Returns the number of events served. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/rdkafkacpp.\-h\end{DoxyCompactItemize}

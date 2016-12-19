@@ -1,0 +1,63 @@
+\hypertarget{classRdKafka_1_1Event}{\section{Rd\-Kafka\-:\-:Event Class Reference}
+\label{classRdKafka_1_1Event}\index{Rd\-Kafka\-::\-Event@{Rd\-Kafka\-::\-Event}}
+}
+
+
+{\ttfamily \#include $<$rdkafkacpp.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Type} \{ {\bfseries E\-V\-E\-N\-T\-\_\-\-E\-R\-R\-O\-R}, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-T\-A\-T\-S}, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-L\-O\-G}, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-T\-H\-R\-O\-T\-T\-L\-E}
+ \}
+\item 
+enum {\bfseries Severity} \{ \\*
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-E\-M\-E\-R\-G} = 0, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-A\-L\-E\-R\-T} = 1, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L} = 2, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R} = 3, 
+\\*
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-W\-A\-R\-N\-I\-N\-G} = 4, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-N\-O\-T\-I\-C\-E} = 5, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-I\-N\-F\-O} = 6, 
+{\bfseries E\-V\-E\-N\-T\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-D\-E\-B\-U\-G} = 7
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1Event_a8bf41860541c6549cccd298b0a4ceb6e}{virtual Type {\bfseries type} () const =0}\label{classRdKafka_1_1Event_a8bf41860541c6549cccd298b0a4ceb6e}
+
+\item 
+\hypertarget{classRdKafka_1_1Event_a6631f15dccbf775a3fa43a1aba8828ab}{virtual Error\-Code {\bfseries err} () const =0}\label{classRdKafka_1_1Event_a6631f15dccbf775a3fa43a1aba8828ab}
+
+\item 
+\hypertarget{classRdKafka_1_1Event_ab98e758dea9aa13eb1421f625e206b16}{virtual Severity {\bfseries severity} () const =0}\label{classRdKafka_1_1Event_ab98e758dea9aa13eb1421f625e206b16}
+
+\item 
+\hypertarget{classRdKafka_1_1Event_a60dbe2545a614b2706594d384156dfa4}{virtual std\-::string {\bfseries fac} () const =0}\label{classRdKafka_1_1Event_a60dbe2545a614b2706594d384156dfa4}
+
+\item 
+\hypertarget{classRdKafka_1_1Event_a94f84a103b017b21d7ede84fbbf9d7ed}{virtual std\-::string {\bfseries str} () const =0}\label{classRdKafka_1_1Event_a94f84a103b017b21d7ede84fbbf9d7ed}
+
+\item 
+\hypertarget{classRdKafka_1_1Event_a21be0397c0bc18657d90341a1eeb1db5}{virtual int {\bfseries throttle\-\_\-time} () const =0}\label{classRdKafka_1_1Event_a21be0397c0bc18657d90341a1eeb1db5}
+
+\item 
+\hypertarget{classRdKafka_1_1Event_a3295812d6be66d4f601ca7055a26f9ef}{virtual std\-::string {\bfseries broker\-\_\-name} () const =0}\label{classRdKafka_1_1Event_a3295812d6be66d4f601ca7055a26f9ef}
+
+\item 
+\hypertarget{classRdKafka_1_1Event_ac4355a247e321448d3ae29655da7b724}{virtual int {\bfseries broker\-\_\-id} () const =0}\label{classRdKafka_1_1Event_ac4355a247e321448d3ae29655da7b724}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Event}{Event} class as provided to the \hyperlink{classRdKafka_1_1EventCb}{Event\-Cb} callback. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/rdkafkacpp.\-h\end{DoxyCompactItemize}

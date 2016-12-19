@@ -1,0 +1,190 @@
+\hypertarget{classRdKafka_1_1Consumer}{\section{Rd\-Kafka\-:\-:Consumer Class Reference}
+\label{classRdKafka_1_1Consumer}\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}}
+}
+
+
+{\ttfamily \#include $<$rdkafkacpp.\-h$>$}
+
+
+
+Inheritance diagram for Rd\-Kafka\-:\-:Consumer\-:
+
+
+Collaboration diagram for Rd\-Kafka\-:\-:Consumer\-:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Error\-Code \hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\-\_\-t partition, int64\-\_\-t offset)=0
+\item 
+virtual Error\-Code \hyperlink{classRdKafka_1_1Consumer_a096b4f201fef44fe4607a9b0b907a229}{start} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\-\_\-t partition, int64\-\_\-t offset, \hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$queue)=0
+\item 
+virtual Error\-Code \hyperlink{classRdKafka_1_1Consumer_a123ce138ca526ee1e5fafff09f14602b}{stop} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\-\_\-t partition)=0
+\item 
+virtual \hyperlink{classRdKafka_1_1Message}{Message} $\ast$ \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{consume} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\-\_\-t partition, int timeout\-\_\-ms)=0
+\item 
+virtual \hyperlink{classRdKafka_1_1Message}{Message} $\ast$ \hyperlink{classRdKafka_1_1Consumer_a2393e5cc720f1e08231037af9e4b6ac5}{consume} (\hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$queue, int timeout\-\_\-ms)=0
+\item 
+virtual int \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{consume\-\_\-callback} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\-\_\-t partition, int timeout\-\_\-ms, \hyperlink{classRdKafka_1_1ConsumeCb}{Consume\-Cb} $\ast$consume\-\_\-cb, void $\ast$opaque)=0
+\item 
+virtual int \hyperlink{classRdKafka_1_1Consumer_a992d17b68c36e500cfa7332c23d112ba}{consume\-\_\-callback} (\hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$queue, int timeout\-\_\-ms, \hyperlink{classRdKafka_1_1ConsumeCb}{Rd\-Kafka\-::\-Consume\-Cb} $\ast$consume\-\_\-cb, void $\ast$opaque)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1Consumer}{Consumer} $\ast$ \hyperlink{classRdKafka_1_1Consumer_aaa4fdf4ec84bbe40561f7b3d5676c065}{create} (\hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$conf, std\-::string \&errstr)
+\item 
+static int64\-\_\-t \hyperlink{classRdKafka_1_1Consumer_a7ad238e24f96a58540f96714e1e292b0}{Offset\-Tail} (int64\-\_\-t offset)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Consumer}{Consumer} 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!consume@{consume}}
+\index{consume@{consume}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{consume}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Message}$\ast$ Rd\-Kafka\-::\-Consumer\-::consume (
+\begin{DoxyParamCaption}
+\item[{{\bf Topic} $\ast$}]{topic, }
+\item[{int32\-\_\-t}]{partition, }
+\item[{int}]{timeout\-\_\-ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}
+Consume a single message from topic and 'partition'.
+
+'timeout\-\_\-ms' is maximum amount of time to wait for a message to be received. \hyperlink{classRdKafka_1_1Consumer}{Consumer} must have been previously started with {\ttfamily ..-\/$>$\hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start()}}.
+
+Returns a \hyperlink{classRdKafka_1_1Message}{Message} object, the application needs to check if message is an error or a proper message {\ttfamily Message-\/$>$err()} and checking for {\ttfamily E\-R\-R\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R}.
+
+The message object must be destroyed when the application is done with it.
+
+Errors (in Message-\/$>$err())\-: E\-R\-R\-\_\-\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T -\/ 'timeout\-\_\-ms' was reached with no new messages fetched. E\-R\-R\-\_\-\-\_\-\-P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-E\-O\-F -\/ End of partition reached, not an error. \hypertarget{classRdKafka_1_1Consumer_a2393e5cc720f1e08231037af9e4b6ac5}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!consume@{consume}}
+\index{consume@{consume}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{consume}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Message}$\ast$ Rd\-Kafka\-::\-Consumer\-::consume (
+\begin{DoxyParamCaption}
+\item[{{\bf Queue} $\ast$}]{queue, }
+\item[{int}]{timeout\-\_\-ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Consumer_a2393e5cc720f1e08231037af9e4b6ac5}
+Consume a single message from the specified queue.
+
+'timeout\-\_\-ms' is maximum amount of time to wait for a message to be received. \hyperlink{classRdKafka_1_1Consumer}{Consumer} must have been previously started on the queue with {\ttfamily ..-\/$>$\hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start()}}.
+
+Returns a \hyperlink{classRdKafka_1_1Message}{Message} object, the application needs to check if message is an error or a proper message {\ttfamily Message-\/$>$err()} and checking for {\ttfamily E\-R\-R\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R}.
+
+The message object must be destroyed when the application is done with it.
+
+Errors (in Message-\/$>$err())\-: E\-R\-R\-\_\-\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T -\/ 'timeout\-\_\-ms' was reached with no new messages fetched.
+
+Note that Message-\/$>$topic() may be nullptr after certain kinds of errors, so applications should check that it isn't null before dereferencing it. \hypertarget{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!consume\-\_\-callback@{consume\-\_\-callback}}
+\index{consume\-\_\-callback@{consume\-\_\-callback}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{consume\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Rd\-Kafka\-::\-Consumer\-::consume\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{{\bf Topic} $\ast$}]{topic, }
+\item[{int32\-\_\-t}]{partition, }
+\item[{int}]{timeout\-\_\-ms, }
+\item[{{\bf Consume\-Cb} $\ast$}]{consume\-\_\-cb, }
+\item[{void $\ast$}]{opaque}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}
+Consumes messages from 'topic' and 'partition', calling the provided callback for each consumed messsage.
+
+{\ttfamily \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{consume\-\_\-callback()}} provides higher throughput performance than {\ttfamily \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{consume()}}.
+
+'timeout\-\_\-ms' is the maximum amount of time to wait for one or more messages to arrive.
+
+The provided 'consume\-\_\-cb' instance has its 'consume\-\_\-cb' function called for every message received.
+
+The 'opaque' argument is passed to the 'consume\-\_\-cb' as 'opaque'.
+
+Returns the number of messages processed or -\/1 on error.
+
+See\-: \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{consume()} \hypertarget{classRdKafka_1_1Consumer_a992d17b68c36e500cfa7332c23d112ba}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!consume\-\_\-callback@{consume\-\_\-callback}}
+\index{consume\-\_\-callback@{consume\-\_\-callback}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{consume\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Rd\-Kafka\-::\-Consumer\-::consume\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{{\bf Queue} $\ast$}]{queue, }
+\item[{int}]{timeout\-\_\-ms, }
+\item[{{\bf Rd\-Kafka\-::\-Consume\-Cb} $\ast$}]{consume\-\_\-cb, }
+\item[{void $\ast$}]{opaque}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Consumer_a992d17b68c36e500cfa7332c23d112ba}
+Consumes messages from 'queue', calling the provided callback for each consumed messsage.
+
+{\ttfamily \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{consume\-\_\-callback()}} provides higher throughput performance than {\ttfamily \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{consume()}}.
+
+'timeout\-\_\-ms' is the maximum amount of time to wait for one or more messages to arrive.
+
+The provided 'consume\-\_\-cb' instance has its 'consume\-\_\-cb' function called for every message received.
+
+The 'opaque' argument is passed to the 'consume\-\_\-cb' as 'opaque'.
+
+Returns the number of messages processed or -\/1 on error.
+
+See\-: \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{consume()} \hypertarget{classRdKafka_1_1Consumer_aaa4fdf4ec84bbe40561f7b3d5676c065}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!create@{create}}
+\index{create@{create}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Consumer}$\ast$ Rd\-Kafka\-::\-Consumer\-::create (
+\begin{DoxyParamCaption}
+\item[{{\bf Conf} $\ast$}]{conf, }
+\item[{std\-::string \&}]{errstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classRdKafka_1_1Consumer_aaa4fdf4ec84bbe40561f7b3d5676c065}
+Creates a new Kafka consumer handle.
+
+'conf' is an optional object that will be used instead of the default configuration. The 'conf' object is reusable after this call.
+
+Returns the new handle on success or N\-U\-L\-L on error in which case 'errstr' is set to a human readable error message. \hypertarget{classRdKafka_1_1Consumer_a7ad238e24f96a58540f96714e1e292b0}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!Offset\-Tail@{Offset\-Tail}}
+\index{Offset\-Tail@{Offset\-Tail}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{Offset\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}static int64\-\_\-t Rd\-Kafka\-::\-Consumer\-::\-Offset\-Tail (
+\begin{DoxyParamCaption}
+\item[{int64\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classRdKafka_1_1Consumer_a7ad238e24f96a58540f96714e1e292b0}
+Converts an offset into the logical offset from the tail of a topic.
+
+'offset' is the (positive) number of items from the end. \hypertarget{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!start@{start}}
+\index{start@{start}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual Error\-Code Rd\-Kafka\-::\-Consumer\-::start (
+\begin{DoxyParamCaption}
+\item[{{\bf Topic} $\ast$}]{topic, }
+\item[{int32\-\_\-t}]{partition, }
+\item[{int64\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}
+Start consuming messages for topic and 'partition' at offset 'offset' which may either be a proper offset (0..N) or one of the the special offsets\-: {\ttfamily O\-F\-F\-S\-E\-T\-\_\-\-B\-E\-G\-I\-N\-N\-I\-N\-G} or {\ttfamily O\-F\-F\-S\-E\-T\-\_\-\-E\-N\-D}.
+
+rdkafka will attempt to keep 'queued.\-min.\-messages' (config property) messages in the local queue by repeatedly fetching batches of messages from the broker until the threshold is reached.
+
+The application shall use one of the {\ttfamily ..-\/$>$consume$\ast$()} functions to consume messages from the local queue, each kafka message being represented as a {\ttfamily \hyperlink{classRdKafka_1_1Message}{Rd\-Kafka\-::\-Message} $\ast$} object.
+
+{\ttfamily ..-\/$>$\hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start()}} must not be called multiple times for the same topic and partition without stopping consumption first with {\ttfamily ..-\/$>$\hyperlink{classRdKafka_1_1Consumer_a123ce138ca526ee1e5fafff09f14602b}{stop()}}.
+
+Returns an Error\-Code to indicate success or failure. \hypertarget{classRdKafka_1_1Consumer_a096b4f201fef44fe4607a9b0b907a229}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!start@{start}}
+\index{start@{start}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual Error\-Code Rd\-Kafka\-::\-Consumer\-::start (
+\begin{DoxyParamCaption}
+\item[{{\bf Topic} $\ast$}]{topic, }
+\item[{int32\-\_\-t}]{partition, }
+\item[{int64\-\_\-t}]{offset, }
+\item[{{\bf Queue} $\ast$}]{queue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Consumer_a096b4f201fef44fe4607a9b0b907a229}
+Start consuming messages for topic and 'partition' on queue 'queue'.
+
+See \hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{start()} above for additional details on parameters and results. \hypertarget{classRdKafka_1_1Consumer_a123ce138ca526ee1e5fafff09f14602b}{\index{Rd\-Kafka\-::\-Consumer@{Rd\-Kafka\-::\-Consumer}!stop@{stop}}
+\index{stop@{stop}!RdKafka::Consumer@{Rd\-Kafka\-::\-Consumer}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}virtual Error\-Code Rd\-Kafka\-::\-Consumer\-::stop (
+\begin{DoxyParamCaption}
+\item[{{\bf Topic} $\ast$}]{topic, }
+\item[{int32\-\_\-t}]{partition}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Consumer_a123ce138ca526ee1e5fafff09f14602b}
+Stop consuming messages for topic and 'partition', purging all messages currently in the local queue.
+
+The application needs to be stop all consumers before destroying the \hyperlink{classRdKafka_1_1Consumer}{Consumer} handle.
+
+Returns 0 on success or -\/1 on error (see {\ttfamily errno}). 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/rdkafkacpp.\-h\end{DoxyCompactItemize}

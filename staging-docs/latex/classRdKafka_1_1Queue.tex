@@ -1,0 +1,34 @@
+\hypertarget{classRdKafka_1_1Queue}{\section{Rd\-Kafka\-:\-:Queue Class Reference}
+\label{classRdKafka_1_1Queue}\index{Rd\-Kafka\-::\-Queue@{Rd\-Kafka\-::\-Queue}}
+}
+
+
+{\ttfamily \#include $<$rdkafkacpp.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1Queue}{Queue} $\ast$ \hyperlink{classRdKafka_1_1Queue_a00580bec19f1f7c554ca42ba06c6e2f5}{create} (\hyperlink{classRdKafka_1_1Handle}{Handle} $\ast$handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Queue}{Queue}
+
+Create a new message queue. \hyperlink{classRdKafka_1_1Message}{Message} queues allows the application to re-\/route consumed messages from multiple topic+partitions into one single queue point. This queue point, containing messages from a number of topic+partitions, may then be served by a single consume() method, rather than one per topic+partition combination.
+
+See the \hyperlink{classRdKafka_1_1Consumer_ad2044e3433f626baff667e1a429d6f33}{Consumer\-::start()}, \hyperlink{classRdKafka_1_1Consumer_a0afd32e342283fc10fa6f32cc25950b7}{Consumer\-::consume()}, and \hyperlink{classRdKafka_1_1Consumer_a15a3e64a1ed777804df8b4ea02a40887}{Consumer\-::consume\-\_\-callback()} methods that take a queue as the first parameter for more information. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Queue_a00580bec19f1f7c554ca42ba06c6e2f5}{\index{Rd\-Kafka\-::\-Queue@{Rd\-Kafka\-::\-Queue}!create@{create}}
+\index{create@{create}!RdKafka::Queue@{Rd\-Kafka\-::\-Queue}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Queue}$\ast$ Rd\-Kafka\-::\-Queue\-::create (
+\begin{DoxyParamCaption}
+\item[{{\bf Handle} $\ast$}]{handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classRdKafka_1_1Queue_a00580bec19f1f7c554ca42ba06c6e2f5}
+Create \hyperlink{classRdKafka_1_1Queue}{Queue} object 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/rdkafkacpp.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,51 @@
+\hypertarget{structrd__kafka__topic__partition__list__t}{\section{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t Struct Reference}
+\label{structrd__kafka__topic__partition__list__t}\index{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t@{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t}}
+}
+
+
+A growable list of Topic+\-Partitions.  
+
+
+
+
+{\ttfamily \#include $<$rdkafka.\-h$>$}
+
+
+
+Collaboration diagram for rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t\-:
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structrd__kafka__topic__partition__list__t_a3b9ea691a2ecea3774a7e994c8c0c805}{cnt}
+\item 
+int \hyperlink{structrd__kafka__topic__partition__list__t_a476e475526035de7b10cd79991771d57}{size}
+\item 
+\hyperlink{structrd__kafka__topic__partition__t}{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-t} $\ast$ \hyperlink{structrd__kafka__topic__partition__list__t_acf0fc06547578cd074423565440b58da}{elems}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A growable list of Topic+\-Partitions. 
+
+This is a generic type used for multiple purposes\-:
+\begin{DoxyItemize}
+\item consumer offset (see \hyperlink{rdkafka_8h_ab96539928328f14c3c9177ea0c896c87}{rd\-\_\-kafka\-\_\-commit()}, et.\-al.)
+\item group rebalancing callback (\hyperlink{rdkafka_8h_a10db731dc1a295bd9884e4f8cb199311}{rd\-\_\-kafka\-\_\-conf\-\_\-set\-\_\-rebalance\-\_\-cb()})
+\item offset commit result callback (\hyperlink{rdkafka_8h_a1ab8bb9e8d8cdd5906f9e060b506f2eb}{rd\-\_\-kafka\-\_\-conf\-\_\-set\-\_\-offset\-\_\-commit\-\_\-cb()}) 
+\end{DoxyItemize}
+
+\subsection{Field Documentation}
+\hypertarget{structrd__kafka__topic__partition__list__t_a3b9ea691a2ecea3774a7e994c8c0c805}{\index{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t@{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t}!cnt@{cnt}}
+\index{cnt@{cnt}!rd_kafka_topic_partition_list_t@{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t}}
+\subsubsection[{cnt}]{\setlength{\rightskip}{0pt plus 5cm}int rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t\-::cnt}}\label{structrd__kafka__topic__partition__list__t_a3b9ea691a2ecea3774a7e994c8c0c805}
+Current number of elements \hypertarget{structrd__kafka__topic__partition__list__t_acf0fc06547578cd074423565440b58da}{\index{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t@{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t}!elems@{elems}}
+\index{elems@{elems}!rd_kafka_topic_partition_list_t@{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t}}
+\subsubsection[{elems}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-t}$\ast$ rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t\-::elems}}\label{structrd__kafka__topic__partition__list__t_acf0fc06547578cd074423565440b58da}
+Element array\mbox{[}\mbox{]} \hypertarget{structrd__kafka__topic__partition__list__t_a476e475526035de7b10cd79991771d57}{\index{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t@{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t}!size@{size}}
+\index{size@{size}!rd_kafka_topic_partition_list_t@{rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int rd\-\_\-kafka\-\_\-topic\-\_\-partition\-\_\-list\-\_\-t\-::size}}\label{structrd__kafka__topic__partition__list__t_a476e475526035de7b10cd79991771d57}
+Current allocated size 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{rdkafka_8h}{rdkafka.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,131 @@
+\hypertarget{classRdKafka_1_1Producer}{\section{Rd\-Kafka\-:\-:Producer Class Reference}
+\label{classRdKafka_1_1Producer}\index{Rd\-Kafka\-::\-Producer@{Rd\-Kafka\-::\-Producer}}
+}
+
+
+{\ttfamily \#include $<$rdkafkacpp.\-h$>$}
+
+
+
+Inheritance diagram for Rd\-Kafka\-:\-:Producer\-:
+
+
+Collaboration diagram for Rd\-Kafka\-:\-:Producer\-:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Error\-Code \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\-\_\-t partition, int msgflags, void $\ast$payload, size\-\_\-t len, const std\-::string $\ast$key, void $\ast$msg\-\_\-opaque)=0
+\item 
+virtual Error\-Code \hyperlink{classRdKafka_1_1Producer_a7871c00eb302209acb9ea498eda7dee4}{produce} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\-\_\-t partition, int msgflags, void $\ast$payload, size\-\_\-t len, const void $\ast$key, size\-\_\-t key\-\_\-len, void $\ast$msg\-\_\-opaque)=0
+\item 
+virtual Error\-Code \hyperlink{classRdKafka_1_1Producer_ac51872fe6252093fc0c271557d132d28}{produce} (\hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$topic, int32\-\_\-t partition, const std\-::vector$<$ char $>$ $\ast$payload, const std\-::vector$<$ char $>$ $\ast$key, void $\ast$msg\-\_\-opaque)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1Producer}{Producer} $\ast$ \hyperlink{classRdKafka_1_1Producer_a540569ee0152703cdad4b45419f64b39}{create} (\hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$conf, std\-::string \&errstr)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1Producer_a917f8d94658ea8a9380e694a56aa3f82}{static const int {\bfseries R\-K\-\_\-\-M\-S\-G\-\_\-\-F\-R\-E\-E} = 0x1}\label{classRdKafka_1_1Producer_a917f8d94658ea8a9380e694a56aa3f82}
+
+\item 
+\hypertarget{classRdKafka_1_1Producer_ab30cc16ce698e370771caaa0bbe98e96}{static const int {\bfseries R\-K\-\_\-\-M\-S\-G\-\_\-\-C\-O\-P\-Y} = 0x2}\label{classRdKafka_1_1Producer_ab30cc16ce698e370771caaa0bbe98e96}
+
+\item 
+\hypertarget{classRdKafka_1_1Producer_a0bf7fb074f36a67d42b905cfef060049}{static const int {\bfseries M\-S\-G\-\_\-\-F\-R\-E\-E} = R\-K\-\_\-\-M\-S\-G\-\_\-\-F\-R\-E\-E}\label{classRdKafka_1_1Producer_a0bf7fb074f36a67d42b905cfef060049}
+
+\item 
+\hypertarget{classRdKafka_1_1Producer_aace4f9318fe39b4be34f4b9f3c7c898d}{static const int {\bfseries M\-S\-G\-\_\-\-C\-O\-P\-Y} = R\-K\-\_\-\-M\-S\-G\-\_\-\-C\-O\-P\-Y}\label{classRdKafka_1_1Producer_aace4f9318fe39b4be34f4b9f3c7c898d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Producer}{Producer} 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Producer_a540569ee0152703cdad4b45419f64b39}{\index{Rd\-Kafka\-::\-Producer@{Rd\-Kafka\-::\-Producer}!create@{create}}
+\index{create@{create}!RdKafka::Producer@{Rd\-Kafka\-::\-Producer}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Producer}$\ast$ Rd\-Kafka\-::\-Producer\-::create (
+\begin{DoxyParamCaption}
+\item[{{\bf Conf} $\ast$}]{conf, }
+\item[{std\-::string \&}]{errstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classRdKafka_1_1Producer_a540569ee0152703cdad4b45419f64b39}
+Creates a new Kafka producer handle.
+
+'conf' is an optional object that will be used instead of the default configuration. The 'conf' object is reusable after this call.
+
+Returns the new handle on success or N\-U\-L\-L on error in which case 'errstr' is set to a human readable error message. \hypertarget{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{\index{Rd\-Kafka\-::\-Producer@{Rd\-Kafka\-::\-Producer}!produce@{produce}}
+\index{produce@{produce}!RdKafka::Producer@{Rd\-Kafka\-::\-Producer}}
+\subsubsection[{produce}]{\setlength{\rightskip}{0pt plus 5cm}virtual Error\-Code Rd\-Kafka\-::\-Producer\-::produce (
+\begin{DoxyParamCaption}
+\item[{{\bf Topic} $\ast$}]{topic, }
+\item[{int32\-\_\-t}]{partition, }
+\item[{int}]{msgflags, }
+\item[{void $\ast$}]{payload, }
+\item[{size\-\_\-t}]{len, }
+\item[{const std\-::string $\ast$}]{key, }
+\item[{void $\ast$}]{msg\-\_\-opaque}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}
+Produce and send a single message to broker.
+
+This is an asynch non-\/blocking A\-P\-I.
+
+'partition' is the target partition, either\-:
+\begin{DoxyItemize}
+\item \hyperlink{classRdKafka_1_1Topic_ab69c18779df1c8e150648e640b159654}{Rd\-Kafka\-::\-Topic\-::\-P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-U\-A} (unassigned) for automatic partitioning using the topic's partitioner function, or
+\item a fixed partition (0..N)
+\end{DoxyItemize}
+
+'msgflags' is zero or more of the following flags O\-R\-:ed together\-: R\-K\-\_\-\-M\-S\-G\-\_\-\-F\-R\-E\-E -\/ rdkafka will free(3) 'payload' when it is done with it. R\-K\-\_\-\-M\-S\-G\-\_\-\-C\-O\-P\-Y -\/ the 'payload' data will be copied and the 'payload' pointer will not be used by rdkafka after the call returns.
+
+N\-O\-T\-E\-: R\-K\-\_\-\-M\-S\-G\-\_\-\-F\-R\-E\-E and R\-K\-\_\-\-M\-S\-G\-\_\-\-C\-O\-P\-Y are mutually exclusive.
+
+If the function returns -\/1 and R\-K\-\_\-\-M\-S\-G\-\_\-\-F\-R\-E\-E was specified, then the memory associated with the payload is still the caller's responsibility.
+
+'payload' is the message payload of size 'len' bytes.
+
+'key' is an optional message key, if non-\/\-N\-U\-L\-L it will be passed to the topic partitioner as well as be sent with the message to the broker and passed on to the consumer.
+
+'msg\-\_\-opaque' is an optional application-\/provided per-\/message opaque pointer that will provided in the delivery report callback ({\ttfamily dr\-\_\-cb}) for referencing this message.
+
+Returns an Error\-Code to indicate success or failure. E\-R\-R\-\_\-\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-F\-U\-L\-L -\/ maximum number of outstanding messages has been reached\-: \char`\"{}queue.\-buffering.\-max.\-message\char`\"{}
+
+E\-R\-R\-\_\-\-M\-S\-G\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-O\-O\-\_\-\-L\-A\-R\-G\-E -\/ message is larger than configured max size\-: \char`\"{}messages.\-max.\-bytes\char`\"{}.
+
+E\-R\-R\-\_\-\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-P\-A\-R\-T\-I\-T\-I\-O\-N -\/ requested 'partition' is unknown in the Kafka cluster.
+
+E\-R\-R\-\_\-\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-T\-O\-P\-I\-C -\/ topic is unknown in the Kafka cluster. \hypertarget{classRdKafka_1_1Producer_a7871c00eb302209acb9ea498eda7dee4}{\index{Rd\-Kafka\-::\-Producer@{Rd\-Kafka\-::\-Producer}!produce@{produce}}
+\index{produce@{produce}!RdKafka::Producer@{Rd\-Kafka\-::\-Producer}}
+\subsubsection[{produce}]{\setlength{\rightskip}{0pt plus 5cm}virtual Error\-Code Rd\-Kafka\-::\-Producer\-::produce (
+\begin{DoxyParamCaption}
+\item[{{\bf Topic} $\ast$}]{topic, }
+\item[{int32\-\_\-t}]{partition, }
+\item[{int}]{msgflags, }
+\item[{void $\ast$}]{payload, }
+\item[{size\-\_\-t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{size\-\_\-t}]{key\-\_\-len, }
+\item[{void $\ast$}]{msg\-\_\-opaque}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Producer_a7871c00eb302209acb9ea498eda7dee4}
+Variant \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce()} that passes the key as a pointer and length instead of as a const std\-::string $\ast$. \hypertarget{classRdKafka_1_1Producer_ac51872fe6252093fc0c271557d132d28}{\index{Rd\-Kafka\-::\-Producer@{Rd\-Kafka\-::\-Producer}!produce@{produce}}
+\index{produce@{produce}!RdKafka::Producer@{Rd\-Kafka\-::\-Producer}}
+\subsubsection[{produce}]{\setlength{\rightskip}{0pt plus 5cm}virtual Error\-Code Rd\-Kafka\-::\-Producer\-::produce (
+\begin{DoxyParamCaption}
+\item[{{\bf Topic} $\ast$}]{topic, }
+\item[{int32\-\_\-t}]{partition, }
+\item[{const std\-::vector$<$ char $>$ $\ast$}]{payload, }
+\item[{const std\-::vector$<$ char $>$ $\ast$}]{key, }
+\item[{void $\ast$}]{msg\-\_\-opaque}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Producer_ac51872fe6252093fc0c271557d132d28}
+Variant \hyperlink{classRdKafka_1_1Producer_ab90a30c5e5fb006a3b4004dc4c9a7923}{produce()} that accepts vectors for key and payload. The vector data will be copied. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/rdkafkacpp.\-h\end{DoxyCompactItemize}

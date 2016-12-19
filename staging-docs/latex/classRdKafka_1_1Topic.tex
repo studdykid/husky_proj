@@ -1,0 +1,94 @@
+\hypertarget{classRdKafka_1_1Topic}{\section{Rd\-Kafka\-:\-:Topic Class Reference}
+\label{classRdKafka_1_1Topic}\index{Rd\-Kafka\-::\-Topic@{Rd\-Kafka\-::\-Topic}}
+}
+
+
+{\ttfamily \#include $<$rdkafkacpp.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std\-::string \hyperlink{classRdKafka_1_1Topic_af61ec8b3c384a8de5a12f804e771c63d}{name} () const =0
+\item 
+virtual bool \hyperlink{classRdKafka_1_1Topic_a8e2f4ce86845398312d319001462577c}{partition\-\_\-available} (int32\-\_\-t partition) const =0
+\item 
+virtual Error\-Code \hyperlink{classRdKafka_1_1Topic_a218a291c89f5d4c311bec3c2b2bd8056}{offset\-\_\-store} (int32\-\_\-t partition, int64\-\_\-t offset)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRdKafka_1_1Topic}{Topic} $\ast$ \hyperlink{classRdKafka_1_1Topic_a01b26449715177b98a3f7edaf42d75a7}{create} (\hyperlink{classRdKafka_1_1Handle}{Handle} $\ast$base, const std\-::string \&topic\-\_\-str, \hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$conf, std\-::string \&errstr)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int32\-\_\-t \hyperlink{classRdKafka_1_1Topic_ab69c18779df1c8e150648e640b159654}{P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-U\-A} = -\/1
+\item 
+\hypertarget{classRdKafka_1_1Topic_a5d3aa07897b2a84dd23aa501318be42a}{static const int64\-\_\-t {\bfseries O\-F\-F\-S\-E\-T\-\_\-\-B\-E\-G\-I\-N\-N\-I\-N\-G} = -\/2}\label{classRdKafka_1_1Topic_a5d3aa07897b2a84dd23aa501318be42a}
+
+\item 
+\hypertarget{classRdKafka_1_1Topic_ac13c22ede4c3475282e3bd80a4fa969f}{static const int64\-\_\-t {\bfseries O\-F\-F\-S\-E\-T\-\_\-\-E\-N\-D} = -\/1}\label{classRdKafka_1_1Topic_ac13c22ede4c3475282e3bd80a4fa969f}
+
+\item 
+\hypertarget{classRdKafka_1_1Topic_a94be7a8729b679e1065910acd0cd7fff}{static const int64\-\_\-t {\bfseries O\-F\-F\-S\-E\-T\-\_\-\-S\-T\-O\-R\-E\-D} = -\/1000}\label{classRdKafka_1_1Topic_a94be7a8729b679e1065910acd0cd7fff}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRdKafka_1_1Topic}{Topic} 
+
+\subsection{Member Function Documentation}
+\hypertarget{classRdKafka_1_1Topic_a01b26449715177b98a3f7edaf42d75a7}{\index{Rd\-Kafka\-::\-Topic@{Rd\-Kafka\-::\-Topic}!create@{create}}
+\index{create@{create}!RdKafka::Topic@{Rd\-Kafka\-::\-Topic}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Topic}$\ast$ Rd\-Kafka\-::\-Topic\-::create (
+\begin{DoxyParamCaption}
+\item[{{\bf Handle} $\ast$}]{base, }
+\item[{const std\-::string \&}]{topic\-\_\-str, }
+\item[{{\bf Conf} $\ast$}]{conf, }
+\item[{std\-::string \&}]{errstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classRdKafka_1_1Topic_a01b26449715177b98a3f7edaf42d75a7}
+Creates a new topic handle for topic named 'topic\-\_\-str'.
+
+'conf' is an optional configuration for the topic that will be used instead of the default topic configuration. The 'conf' object is reusable after this call.
+
+Returns the new topic handle or N\-U\-L\-L on error (see {\ttfamily errstr}). \hypertarget{classRdKafka_1_1Topic_af61ec8b3c384a8de5a12f804e771c63d}{\index{Rd\-Kafka\-::\-Topic@{Rd\-Kafka\-::\-Topic}!name@{name}}
+\index{name@{name}!RdKafka::Topic@{Rd\-Kafka\-::\-Topic}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\-::string Rd\-Kafka\-::\-Topic\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Topic_af61ec8b3c384a8de5a12f804e771c63d}
+Returns the topic name \hypertarget{classRdKafka_1_1Topic_a218a291c89f5d4c311bec3c2b2bd8056}{\index{Rd\-Kafka\-::\-Topic@{Rd\-Kafka\-::\-Topic}!offset\-\_\-store@{offset\-\_\-store}}
+\index{offset\-\_\-store@{offset\-\_\-store}!RdKafka::Topic@{Rd\-Kafka\-::\-Topic}}
+\subsubsection[{offset\-\_\-store}]{\setlength{\rightskip}{0pt plus 5cm}virtual Error\-Code Rd\-Kafka\-::\-Topic\-::offset\-\_\-store (
+\begin{DoxyParamCaption}
+\item[{int32\-\_\-t}]{partition, }
+\item[{int64\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Topic_a218a291c89f5d4c311bec3c2b2bd8056}
+Store offset 'offset' for topic partition 'partition'. The offset will be commited (written) to the offset store according to {\ttfamily auto.\-commit.\-interval.\-ms}.
+
+N\-O\-T\-E\-: {\ttfamily auto.\-commit.\-enable} must be set to \char`\"{}false\char`\"{} when using this A\-P\-I.
+
+Returns R\-D\-\_\-\-K\-A\-F\-K\-A\-\_\-\-R\-E\-S\-P\-\_\-\-E\-R\-R\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R on success or an error code on error. \hypertarget{classRdKafka_1_1Topic_a8e2f4ce86845398312d319001462577c}{\index{Rd\-Kafka\-::\-Topic@{Rd\-Kafka\-::\-Topic}!partition\-\_\-available@{partition\-\_\-available}}
+\index{partition\-\_\-available@{partition\-\_\-available}!RdKafka::Topic@{Rd\-Kafka\-::\-Topic}}
+\subsubsection[{partition\-\_\-available}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Rd\-Kafka\-::\-Topic\-::partition\-\_\-available (
+\begin{DoxyParamCaption}
+\item[{int32\-\_\-t}]{partition}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRdKafka_1_1Topic_a8e2f4ce86845398312d319001462577c}
+Returns true if 'partition' is available for the topic (has leader). N\-O\-T\-E\-: M\-U\-S\-T O\-N\-L\-Y be called from within a \hyperlink{classRdKafka_1_1PartitionerCb}{Partitioner\-Cb} callback. 
+
+\subsection{Field Documentation}
+\hypertarget{classRdKafka_1_1Topic_ab69c18779df1c8e150648e640b159654}{\index{Rd\-Kafka\-::\-Topic@{Rd\-Kafka\-::\-Topic}!P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-U\-A@{P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-U\-A}}
+\index{P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-U\-A@{P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-U\-A}!RdKafka::Topic@{Rd\-Kafka\-::\-Topic}}
+\subsubsection[{P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-U\-A}]{\setlength{\rightskip}{0pt plus 5cm}const int32\-\_\-t Rd\-Kafka\-::\-Topic\-::\-P\-A\-R\-T\-I\-T\-I\-O\-N\-\_\-\-U\-A = -\/1\hspace{0.3cm}{\ttfamily [static]}}}\label{classRdKafka_1_1Topic_ab69c18779df1c8e150648e640b159654}
+Unassigned partition.
+
+The unassigned partition is used by the producer A\-P\-I for messages that should be partitioned using the configured or default partitioner. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/rdkafkacpp.\-h\end{DoxyCompactItemize}

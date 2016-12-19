@@ -1,0 +1,66 @@
+\hypertarget{classRdKafka_1_1KafkaConsumer}{\section{Rd\-Kafka\-:\-:Kafka\-Consumer Class Reference}
+\label{classRdKafka_1_1KafkaConsumer}\index{Rd\-Kafka\-::\-Kafka\-Consumer@{Rd\-Kafka\-::\-Kafka\-Consumer}}
+}
+
+
+{\ttfamily \#include $<$rdkafkacpp.\-h$>$}
+
+
+
+Inheritance diagram for Rd\-Kafka\-:\-:Kafka\-Consumer\-:
+
+
+Collaboration diagram for Rd\-Kafka\-:\-:Kafka\-Consumer\-:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_afd22626a2b370f378272e30411df6f78}{virtual Error\-Code {\bfseries assignment} (std\-::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{Rd\-Kafka\-::\-Topic\-Partition} $\ast$ $>$ \&partitions)=0}\label{classRdKafka_1_1KafkaConsumer_afd22626a2b370f378272e30411df6f78}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a470f95d195c1c0dc9466040cdf1ec12d}{virtual Error\-Code {\bfseries subscription} (std\-::vector$<$ std\-::string $>$ \&topics)=0}\label{classRdKafka_1_1KafkaConsumer_a470f95d195c1c0dc9466040cdf1ec12d}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a7404297cecc9be656026c6c6154ce2bd}{virtual Error\-Code {\bfseries subscribe} (const std\-::vector$<$ std\-::string $>$ \&topics)=0}\label{classRdKafka_1_1KafkaConsumer_a7404297cecc9be656026c6c6154ce2bd}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a933d7e1d8bceab2422463ee8b335f15b}{virtual Error\-Code {\bfseries unsubscribe} ()=0}\label{classRdKafka_1_1KafkaConsumer_a933d7e1d8bceab2422463ee8b335f15b}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_af3f872bcb7d46febbaea63518f854b46}{virtual Error\-Code {\bfseries assign} (const std\-::vector$<$ \hyperlink{classRdKafka_1_1TopicPartition}{Topic\-Partition} $\ast$ $>$ \&partitions)=0}\label{classRdKafka_1_1KafkaConsumer_af3f872bcb7d46febbaea63518f854b46}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a21dc83bc3eb00e2b4e0f6373244976b6}{virtual Error\-Code {\bfseries unassign} ()=0}\label{classRdKafka_1_1KafkaConsumer_a21dc83bc3eb00e2b4e0f6373244976b6}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}{virtual \hyperlink{classRdKafka_1_1Message}{Message} $\ast$ {\bfseries consume} (int timeout\-\_\-ms)=0}\label{classRdKafka_1_1KafkaConsumer_a7dc106f1c3b99767a0930a9cf8cabf84}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a1c421bf2b44509704ad3d9e785c5b15c}{virtual Error\-Code {\bfseries commit\-Sync} ()=0}\label{classRdKafka_1_1KafkaConsumer_a1c421bf2b44509704ad3d9e785c5b15c}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a6d68b1b8d21dc26499938cb6e529f928}{virtual Error\-Code {\bfseries commit\-Async} ()=0}\label{classRdKafka_1_1KafkaConsumer_a6d68b1b8d21dc26499938cb6e529f928}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_ac5d1b4fcadea749b774ab1cdd62de2d1}{virtual Error\-Code {\bfseries commit\-Sync} (\hyperlink{classRdKafka_1_1Message}{Message} $\ast$message)=0}\label{classRdKafka_1_1KafkaConsumer_ac5d1b4fcadea749b774ab1cdd62de2d1}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a278db6d20ebcaf501af9487c0957d57f}{virtual Error\-Code {\bfseries commit\-Async} (\hyperlink{classRdKafka_1_1Message}{Message} $\ast$message)=0}\label{classRdKafka_1_1KafkaConsumer_a278db6d20ebcaf501af9487c0957d57f}
+
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_a5c78a721aa91f3be9903f09ddf084644}{virtual Error\-Code {\bfseries close} ()=0}\label{classRdKafka_1_1KafkaConsumer_a5c78a721aa91f3be9903f09ddf084644}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRdKafka_1_1KafkaConsumer_ac32a5eb3474b3315635cb1d39794d068}{static \hyperlink{classRdKafka_1_1KafkaConsumer}{Kafka\-Consumer} $\ast$ {\bfseries create} (\hyperlink{classRdKafka_1_1Conf}{Conf} $\ast$conf, std\-::string \&errstr)}\label{classRdKafka_1_1KafkaConsumer_ac32a5eb3474b3315635cb1d39794d068}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+High-\/level \hyperlink{classRdKafka_1_1KafkaConsumer}{Kafka\-Consumer} (for brokers 0.\-9 and later) 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src-\/cpp/rdkafkacpp.\-h\end{DoxyCompactItemize}

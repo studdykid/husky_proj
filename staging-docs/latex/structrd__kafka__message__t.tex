@@ -1,0 +1,93 @@
+\hypertarget{structrd__kafka__message__t}{\section{rd\-\_\-kafka\-\_\-message\-\_\-t Struct Reference}
+\label{structrd__kafka__message__t}\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rdkafka_8h_a03509bab51072c72a8dcf52337e6d5cb}{rd\-\_\-kafka\-\_\-resp\-\_\-err\-\_\-t} \hyperlink{structrd__kafka__message__t_aed08051a31f216cc0369c734493bbc46}{err}
+\item 
+rd\-\_\-kafka\-\_\-topic\-\_\-t $\ast$ \hyperlink{structrd__kafka__message__t_ad99c2966a73d2a0be7acf101c41d70f1}{rkt}
+\item 
+int32\-\_\-t \hyperlink{structrd__kafka__message__t_aad65babd39a553e48269e7469e36a09a}{partition}
+\item 
+void $\ast$ \hyperlink{structrd__kafka__message__t_aa78acb7414a91d7009268e84b1526b7f}{payload}
+\item 
+size\-\_\-t \hyperlink{structrd__kafka__message__t_a27c4e215c06110e44eec144d449400ae}{len}
+\item 
+void $\ast$ \hyperlink{structrd__kafka__message__t_a93cbea9d4fb7cfc3e7f546bc5d5f39e2}{key}
+\item 
+size\-\_\-t \hyperlink{structrd__kafka__message__t_a170276e797dab0eb732db4eecd329a95}{key\-\_\-len}
+\item 
+int64\-\_\-t \hyperlink{structrd__kafka__message__t_a979bd27da570c93768e474527ddb136e}{offset}
+\item 
+void $\ast$ \hyperlink{structrd__kafka__message__t_a8eb860a90c978b15892eef54953d5289}{\-\_\-private}
+\end{DoxyCompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structrd__kafka__message__t_a8eb860a90c978b15892eef54953d5289}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!\-\_\-private@{\-\_\-private}}
+\index{\-\_\-private@{\-\_\-private}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{\-\_\-private}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rd\-\_\-kafka\-\_\-message\-\_\-t\-::\-\_\-private}}\label{structrd__kafka__message__t_a8eb860a90c978b15892eef54953d5289}
+\begin{DoxyVerb}        Consume:
+\end{DoxyVerb}
+
+\begin{DoxyItemize}
+\item rdkafka private pointer\-: D\-O N\-O\-T M\-O\-D\-I\-F\-Y
+\item dr\-\_\-msg\-\_\-cb\-: msg\-\_\-opaque from produce() call 
+\end{DoxyItemize}\hypertarget{structrd__kafka__message__t_aed08051a31f216cc0369c734493bbc46}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!err@{err}}
+\index{err@{err}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rd\-\_\-kafka\-\_\-resp\-\_\-err\-\_\-t} rd\-\_\-kafka\-\_\-message\-\_\-t\-::err}}\label{structrd__kafka__message__t_aed08051a31f216cc0369c734493bbc46}
+Non-\/zero for error signaling. \hypertarget{structrd__kafka__message__t_a93cbea9d4fb7cfc3e7f546bc5d5f39e2}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!key@{key}}
+\index{key@{key}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rd\-\_\-kafka\-\_\-message\-\_\-t\-::key}}\label{structrd__kafka__message__t_a93cbea9d4fb7cfc3e7f546bc5d5f39e2}
+\begin{DoxyVerb}         Depends on the value of \c err :
+\end{DoxyVerb}
+
+\begin{DoxyItemize}
+\item {\ttfamily err==0}\-: Optional message key 
+\end{DoxyItemize}\hypertarget{structrd__kafka__message__t_a170276e797dab0eb732db4eecd329a95}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!key\-\_\-len@{key\-\_\-len}}
+\index{key\-\_\-len@{key\-\_\-len}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{key\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t rd\-\_\-kafka\-\_\-message\-\_\-t\-::key\-\_\-len}}\label{structrd__kafka__message__t_a170276e797dab0eb732db4eecd329a95}
+\begin{DoxyVerb}          Depends on the value of \c err :
+\end{DoxyVerb}
+
+\begin{DoxyItemize}
+\item {\ttfamily err==0}\-: Optional message key length 
+\end{DoxyItemize}\hypertarget{structrd__kafka__message__t_a27c4e215c06110e44eec144d449400ae}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!len@{len}}
+\index{len@{len}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t rd\-\_\-kafka\-\_\-message\-\_\-t\-::len}}\label{structrd__kafka__message__t_a27c4e215c06110e44eec144d449400ae}
+\begin{DoxyVerb}          Depends on the value of \c err :
+\end{DoxyVerb}
+
+\begin{DoxyItemize}
+\item {\ttfamily err==0}\-: Message payload length
+\item {\ttfamily err!=0}\-: Error string length 
+\end{DoxyItemize}\hypertarget{structrd__kafka__message__t_a979bd27da570c93768e474527ddb136e}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!offset@{offset}}
+\index{offset@{offset}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}int64\-\_\-t rd\-\_\-kafka\-\_\-message\-\_\-t\-::offset}}\label{structrd__kafka__message__t_a979bd27da570c93768e474527ddb136e}
+\begin{DoxyVerb}        Consume:
+          - Message offset (or offset for error
+\end{DoxyVerb}
+ if {\ttfamily err!=0} if applicable).
+\begin{DoxyItemize}
+\item dr\-\_\-msg\-\_\-cb\-: Message offset assigned by broker. If {\ttfamily produce.\-offset.\-report} is set then each message will have this field set, otherwise only the last message in each produced internal batch will have this field set, otherwise 0. 
+\end{DoxyItemize}\hypertarget{structrd__kafka__message__t_aad65babd39a553e48269e7469e36a09a}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!partition@{partition}}
+\index{partition@{partition}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{partition}]{\setlength{\rightskip}{0pt plus 5cm}int32\-\_\-t rd\-\_\-kafka\-\_\-message\-\_\-t\-::partition}}\label{structrd__kafka__message__t_aad65babd39a553e48269e7469e36a09a}
+Partition \hypertarget{structrd__kafka__message__t_aa78acb7414a91d7009268e84b1526b7f}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!payload@{payload}}
+\index{payload@{payload}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{payload}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rd\-\_\-kafka\-\_\-message\-\_\-t\-::payload}}\label{structrd__kafka__message__t_aa78acb7414a91d7009268e84b1526b7f}
+\begin{DoxyVerb}         Depends on the value of \c err :
+\end{DoxyVerb}
+
+\begin{DoxyItemize}
+\item {\ttfamily err==0}\-: Message payload.
+\item {\ttfamily err!=0}\-: Error string 
+\end{DoxyItemize}\hypertarget{structrd__kafka__message__t_ad99c2966a73d2a0be7acf101c41d70f1}{\index{rd\-\_\-kafka\-\_\-message\-\_\-t@{rd\-\_\-kafka\-\_\-message\-\_\-t}!rkt@{rkt}}
+\index{rkt@{rkt}!rd_kafka_message_t@{rd\-\_\-kafka\-\_\-message\-\_\-t}}
+\subsubsection[{rkt}]{\setlength{\rightskip}{0pt plus 5cm}rd\-\_\-kafka\-\_\-topic\-\_\-t$\ast$ rd\-\_\-kafka\-\_\-message\-\_\-t\-::rkt}}\label{structrd__kafka__message__t_ad99c2966a73d2a0be7acf101c41d70f1}
+Topic 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{rdkafka_8h}{rdkafka.\-h}\end{DoxyCompactItemize}
